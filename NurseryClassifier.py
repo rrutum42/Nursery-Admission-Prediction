@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 # Importing the dataset
-dataset = pd.read_csv(r'C:\Users\rrutu\Downloads\NurseryClassifier\Nursery.csv')
+dataset = pd.read_csv(r'Nursery.csv')
 X = dataset.iloc[:, 0:8]
 y = dataset.iloc[:, [8]]
 
