@@ -16,14 +16,14 @@ labelencoder_y = LabelEncoder()
 y = labelencoder_y.fit_transform(np.ravel(y))
 
 from sklearn.ensemble import ExtraTreesClassifier
-###feature extraction###
+# Feature Extraction
 model = ExtraTreesClassifier(n_estimators=100)
 model.fit(X, y)
 print(model.feature_importances_)
 
 from sklearn.feature_selection import SelectKBest
 from sklearn.feature_selection import chi2
-# feature extraction
+# Feature Extraction
 test = SelectKBest(score_func=chi2, k=6)
 fit = test.fit(X, y)
 # summarize scores
@@ -93,7 +93,7 @@ def accuracy(y_test,y_pred):
     from sklearn.metrics import accuracy_score
     print("Accuracy=",accuracy_score(y_test, y_pred)*100)
 
-#applying classification algorithms and comparing their accuracies
+# Applying classification algorithms and comparing their accuracies
 support_vector_machine(X_train, X_test, y_train, y_test)
 random_forest(X_train, X_test, y_train, y_test)
 logistic_regression(X_train, X_test, y_train, y_test)
